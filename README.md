@@ -20,3 +20,9 @@ b. The url of: “amqp://guest:guest@localhost:5672” is the same as in the sub
 ![Sending and processing event](/assets/images/console1.png)
 ketika menjalankan `cargo run` pada subscriber, program akan menyalakan receiver yang siap menerima message dari message broker. Ketika menjalankan `cargo run` pada publisher, program akan mengirimkan message ke message broker menggunakan `publish_event`. Message tersebut berisi lima data `user_id` dan `user_name` yang berbeda-beda. Program subscriber akan menerima message tersebut melalui message broker, kemudian mencetak (print) pesan sesuai format yang ada pada method `UserCreatedHandler`. Program subscriber mencetak pesan sebanyak lima kali sesuai jumlah message yang diterima. Ini menandakan bahwa komunikasi antara subscriber dan publisher berjalan dengan baik melalui perantara message broker.
 
+<br>
+
+### Monitoring chart based on publisher
+![Monitoring chart based on publisher](/assets/images/running-rabbit-mq2.png)
+Lonjakan berwarna ungu yang terdapat pada grafik tersebut menunjukkan peningkatan message rate. Hal ini disebabkan oleh beberapa kali pengiriman message melalui publisher yang tertangkap oleh message broker.
+
